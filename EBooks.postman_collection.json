@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "c744f58e-b74c-458a-846f-57b7d2683798",
+		"name": "EBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33696554"
+	},
+	"item": [
+		{
+			"name": "CreateEbook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"tyerg\",\r\n    \"author\" : \"F. Scasdasott fhf\",\r\n    \"genre\": \"Action\",\r\n    \"format\" : \"Ebook\",\r\n    \"isAvailable\" : true,\r\n    \"price\" : 1203,\r\n    \"stock\" : 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/genre=Action",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"genre=Action"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Action",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genre\": \"Fiction\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Availability",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment Stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"stock\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1/increment-stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1",
+						"increment-stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1 ,\r\n    \"stock\":1,\r\n    \"price\" :1203\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
